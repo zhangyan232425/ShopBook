@@ -1,0 +1,11 @@
+/Users/zyan/Projects/ShopBook/ShopBook/bin/Debug/netcoreapp2.0/ShopBook.deps.json
+/Users/zyan/Projects/ShopBook/ShopBook/bin/Debug/netcoreapp2.0/ShopBook.runtimeconfig.json
+/Users/zyan/Projects/ShopBook/ShopBook/bin/Debug/netcoreapp2.0/ShopBook.runtimeconfig.dev.json
+/Users/zyan/Projects/ShopBook/ShopBook/bin/Debug/netcoreapp2.0/ShopBook.dll
+/Users/zyan/Projects/ShopBook/ShopBook/bin/Debug/netcoreapp2.0/ShopBook.pdb
+/Users/zyan/Projects/ShopBook/ShopBook/obj/Debug/netcoreapp2.0/ShopBook.csprojResolveAssemblyReference.cache
+/Users/zyan/Projects/ShopBook/ShopBook/obj/Debug/netcoreapp2.0/ShopBook.csproj.CoreCompileInputs.cache
+/Users/zyan/Projects/ShopBook/ShopBook/obj/Debug/netcoreapp2.0/ShopBook.AssemblyInfoInputs.cache
+/Users/zyan/Projects/ShopBook/ShopBook/obj/Debug/netcoreapp2.0/ShopBook.AssemblyInfo.cs
+/Users/zyan/Projects/ShopBook/ShopBook/obj/Debug/netcoreapp2.0/ShopBook.dll
+/Users/zyan/Projects/ShopBook/ShopBook/obj/Debug/netcoreapp2.0/ShopBook.pdb
