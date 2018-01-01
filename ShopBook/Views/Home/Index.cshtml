@@ -5,12 +5,12 @@
 <link rel="stylesheet" href="~/css/home.css" />
 
 
-
-
 <div class="container" >
 	<div class="row">
 		<p class="text-center">
-			<a class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Create a List</a>
+			<a asp-area="" asp-controller="List" asp-action="AddList" >Create a List</a>
+            <br
+            <a asp-area="" asp-controller="Product" asp-action="list" >show my list</a>
 		</p>
 	</div>
 </div>
@@ -18,38 +18,3 @@
 
 
 
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<!-- modal header -->
-			<div class="modal-header" align="center">
-				<h3>New List</h3>
-				<button type="button" class="close " data-dismiss="modal" aria-label="Close">
-					<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-				</button>
-			</div>
-
-
-         
-            <!-- Begin # DIV Form -->
-            <div id="div-forms">
-            	<input type="hidden" name="count" value="1" />
-    			<div class="control-group" id="fields">
-        			<label class="control-label" for="field1">To buy!</label>
-        			<div class="controls" id="profs"> 
-            			<form class="input-append">
-            				<div id="field">
-            					<input autocomplete="off" class="input" id="field1" name="list[]" type="text" placeholder="Add a product!" data-items="8"/>
-            					<button id="b1" class="btn add-more" type="button">+</button>
-            				</div>
-                       </form>		
-        			</div>
-    			</div>     
-            </div>             
-		</div>
-	</div>
-</div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="~/js/home.js" ></script>
