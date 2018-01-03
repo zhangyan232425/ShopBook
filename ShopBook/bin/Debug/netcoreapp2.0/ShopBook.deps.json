@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "faa87021e7aad66d9fb50e0be57e23383e805a7d"
+    "signature": "2ac2166cd5b371eda22b56cad8b49a0df97079ec"
   },
   "compilationOptions": {
     "defines": [
@@ -27,6 +27,7 @@
           "Microsoft.AspNetCore.Authentication": "2.0.1",
           "Microsoft.AspNetCore.Authentication.Cookies": "2.0.1",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "2.0.1",
+          "Microsoft.AspNetCore.Mvc.Razor.Host": "1.1.6",
           "Microsoft.AspNetCore.Mvc.TagHelpers": "2.0.1",
           "Microsoft.AspNetCore.Razor.Runtime": "2.0.1",
           "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
@@ -1003,6 +1004,21 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Razor.Host/1.1.6": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Razor.Runtime": "2.0.1",
+          "Microsoft.Extensions.Caching.Memory": "2.0.0",
+          "Microsoft.Extensions.FileProviders.Physical": "2.0.0",
+          "NETStandard.Library": "2.0.0",
+          "System.ComponentModel.TypeConverter": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Microsoft.AspNetCore.Mvc.Razor.Host.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.6/Microsoft.AspNetCore.Mvc.Razor.Host.dll": {}
         }
       },
       "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/2.0.0": {
@@ -5075,6 +5091,13 @@
       "sha512": "sha512-voxpNz4zq9RxOPnK5oYchyA1ggNVpnz34mFsqwH7G9RUJHFLhjlRaeaKXi8gGwWU3RomGF9ahhH9o8DHgdxmPA==",
       "path": "microsoft.aspnetcore.mvc.razor.extensions/2.0.1",
       "hashPath": "microsoft.aspnetcore.mvc.razor.extensions.2.0.1.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Razor.Host/1.1.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ItuM4LMx6F4uMXPZi5f4EHqAVZ+fJVtxd1dhmyQ2k3JH+UDpS1/9ypKfAfmY1IGV4cS+AlRV4NLx1HAm/Q+6rg==",
+      "path": "microsoft.aspnetcore.mvc.razor.host/1.1.6",
+      "hashPath": "microsoft.aspnetcore.mvc.razor.host.1.1.6.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/2.0.0": {
       "type": "package",

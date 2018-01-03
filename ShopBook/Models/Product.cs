@@ -10,10 +10,12 @@ namespace ShopBook.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime ProductDate { get; set; }
         public string Name { get; set; }
+        public string Store { get; set; }
     }
 
-    public class ProductModel
-    {
-        public List<Product> ProductList { get; set; }
-    }
+    //public class ProductModel
+    //{
+    //    public Product NewProduct { get; set; }
+    //    public List<Product> ProductList { get; set; }
+    //}
 }

@@ -13,29 +13,24 @@ namespace ShopBook.Controllers
 {
     public class ListController : Controller
     {
-        // GET: /<controller>/
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         private ProductDbContext context;
         public ListController(ProductDbContext context)
         {
             this.context = context;
         }
-
-        public IActionResult AddList()
-        {
-            return View();
-        }
-
-        public async Task<IActionResult> Add(Product NewProduct)
+        // GET: /<controller>/
+        public IActionResult Index()
         {
             
-            NewProduct.ProductId = Guid.NewGuid();
-            NewProduct.ProductDate = DateTime.Today;
-            context.Product.Add(NewProduct);
+            return View(context.Product.ToList());
+        }
+
+        public async Task<IActionResult> Add(ViewProduct vm)
+        {
+            
+            vm.NewProduct.ProductId = Guid.NewGuid();
+            vm.NewProduct.ProductDate = DateTime.Today;
+            context.Product.Add(vm.NewProduct);
             await context.SaveChangesAsync();
             return RedirectToAction("Index");
         }

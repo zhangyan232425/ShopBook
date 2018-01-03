@@ -1,18 +1,23 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
 using ShopBook.Models;
 
 namespace ShopBook.Context
 {
-    public class ProductDbContext:DbContext
+    public class ProductDbContext : DbContext
     {
-        public ProductDbContext(DbContextOptions<ProductDbContext> options):base(options)
+        public ProductDbContext(DbContextOptions<ProductDbContext> options) : base(options)
         {
         }
+
+        public DbSet<Product> Product { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
         }
-        public virtual DbSet<Product> Product { get; set; }
+
     }
 }
