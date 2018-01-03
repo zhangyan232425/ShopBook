@@ -1,13 +1,15 @@
-﻿@model ShopBook.Models
-<!--<form method="post" asp-controller="List" asp-action = "Add">
+﻿@model ShopBook.Models.ViewProduct 
+
+<form method="post" asp-controller="List" asp-action = "Add">
     <div class="input-group">
         <input asp-for="NewProduct.Name" type="text" class="form-control"/>
         <input type="submit" value="Create" class="btn btn-primary"/>
     </div>
-</form>-->
+</form>
 
-@foreach (var item in Model){
-<h1>@Model.Name</h1>
+@foreach (var item in Model.Products.ToList()){
+@Html.DisplayFor(modelItem=>item.Name)
+<br>
 }
 
 

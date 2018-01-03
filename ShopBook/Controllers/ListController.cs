@@ -21,8 +21,11 @@ namespace ShopBook.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            
-            return View(context.Product.ToList());
+            ViewProduct vm = new ViewProduct()
+            {
+                Products = context.Products.ToList()
+            }; 
+            return View(vm);
         }
 
         public async Task<IActionResult> Add(ViewProduct vm)
@@ -30,7 +33,7 @@ namespace ShopBook.Controllers
             
             vm.NewProduct.ProductId = Guid.NewGuid();
             vm.NewProduct.ProductDate = DateTime.Today;
-            context.Product.Add(vm.NewProduct);
+            context.Products.Add(vm.NewProduct);
             await context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
