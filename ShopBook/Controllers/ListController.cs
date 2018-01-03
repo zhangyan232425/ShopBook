@@ -25,16 +25,5 @@ namespace ShopBook.Controllers
             return View(context.Product.ToList());
         }
 
-        public async Task<IActionResult> Add(ViewProduct vm)
-        {
-            
-            vm.NewProduct.ProductId = Guid.NewGuid();
-            vm.NewProduct.ProductDate = DateTime.Today;
-            context.Product.Add(vm.NewProduct);
-            await context.SaveChangesAsync();
-            return RedirectToAction("Index");
-        }
-
-
     }
 }

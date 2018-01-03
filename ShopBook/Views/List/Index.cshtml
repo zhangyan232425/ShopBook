@@ -1,4 +1,4 @@
-﻿@model ShopBook.Models
+﻿@model IEnumerable<ShopBook.Models.Product>
 <!--<form method="post" asp-controller="List" asp-action = "Add">
     <div class="input-group">
         <input asp-for="NewProduct.Name" type="text" class="form-control"/>
@@ -7,7 +7,7 @@
 </form>-->
 
 @foreach (var item in Model){
-<h1>@Model.Name</h1>
+<h1>@Html.DisplayFor(modelItem=>item.Name)</h1>
 }
 
 
