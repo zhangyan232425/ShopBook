@@ -11,7 +11,7 @@ using System;
 namespace ShopBook.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20180103152513_producttable")]
+    [Migration("20180106012913_producttable")]
     partial class producttable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,16 +23,22 @@ namespace ShopBook.Migrations
 
             modelBuilder.Entity("ShopBook.Models.Product", b =>
                 {
-                    b.Property<Guid>("ProductId")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
+
+                    b.Property<decimal>("Price");
 
                     b.Property<DateTime>("ProductDate");
 
                     b.Property<string>("Store");
 
-                    b.HasKey("ProductId");
+                    b.Property<decimal>("UnitPrice");
+
+                    b.Property<decimal>("Weight");
+
+                    b.HasKey("ID");
 
                     b.ToTable("Products");
                 });

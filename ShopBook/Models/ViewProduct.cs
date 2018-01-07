@@ -7,6 +7,7 @@ namespace ShopBook.Models
     public class ViewProduct
     {
         public Product NewProduct { get; set; }
-        public List<Product> Products { get; set; }        
+        public List<Product> Products { get; set; }
+
     }
 }

@@ -22,16 +22,22 @@ namespace ShopBook.Migrations
 
             modelBuilder.Entity("ShopBook.Models.Product", b =>
                 {
-                    b.Property<Guid>("ProductId")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
+
+                    b.Property<decimal>("Price");
 
                     b.Property<DateTime>("ProductDate");
 
                     b.Property<string>("Store");
 
-                    b.HasKey("ProductId");
+                    b.Property<decimal>("UnitPrice");
+
+                    b.Property<decimal>("Weight");
+
+                    b.HasKey("ID");
 
                     b.ToTable("Products");
                 });

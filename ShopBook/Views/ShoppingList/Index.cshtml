@@ -1,6 +1,6 @@
 ﻿@model ShopBook.Models.ViewProduct 
 
-<form method="post" asp-controller="List" asp-action = "Add">
+<form method="post" asp-controller="ShoppingList" asp-action = "Add">
     <div class="input-group">
         <input asp-for="NewProduct.Name" type="text" class="form-control"/>
         <input type="submit" value="Create" class="btn btn-primary"/>
@@ -8,8 +8,12 @@
 </form>
 
 @foreach (var item in Model.Products.ToList()){
+<div>
 @Html.DisplayFor(modelItem=>item.Name)
-<br>
+</div>
+
 }
+
+
 
 

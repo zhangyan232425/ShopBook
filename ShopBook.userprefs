@@ -1,8 +1,7 @@
 ﻿<Properties StartupConfiguration="{026D8387-B084-4CC7-9612-F23A54B12BEB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ShopBook/Views/List/Index.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ShopBook/Controllers/ProductController.cs">
     <Files>
-      <File FileName="ShopBook/Controllers/ListController.cs" Line="30" Column="9" />
-      <File FileName="ShopBook/Views/List/Index.cshtml" Line="1" Column="8" />
+      <File FileName="ShopBook/Controllers/ProductController.cs" Line="24" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
