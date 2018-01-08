@@ -35,6 +35,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Context\" />
-    <Folder Include="Views\List\" />
+    <Folder Include="Views\ShoppingList\" />
+    <Folder Include="Views\SpendingDiary\" />
+    <Folder Include="Views\Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\List\AddList.cshtml" />
+    <Content Remove="Views\ShoppingList\AddList.cshtml" />
   </ItemGroup>
 </Project>
