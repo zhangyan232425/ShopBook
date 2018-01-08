@@ -23,6 +23,7 @@ namespace ShopBook.Controllers
         {
             ViewProduct vp = new ViewProduct()
             {
+                
                 Products = _context.Products.ToList()
             }; 
             return View(vp);

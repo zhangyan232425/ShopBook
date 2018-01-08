@@ -22,7 +22,7 @@ namespace ShopBook.Controllers
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder)?"name_desc":"";
             ViewData["PriceSortParm" ]= sortOrder== "Price" ? "price_desc":"Price";
-            ViewData["DataSortParm"] = sortOrder=="Date"?"date_desc" :"Date";
+            ViewData["DateSortParm"] = sortOrder=="Date"?"date_desc" :"Date";
             
             var product  = from item  in _context.Products
                             select item;
@@ -38,7 +38,6 @@ namespace ShopBook.Controllers
                 case "date_desc":
                     product = product.OrderByDescending(p=>p.ProductDate);
                     break;
-
             }
             return View(await product.AsNoTracking().ToListAsync());
         }
