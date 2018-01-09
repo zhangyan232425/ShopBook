@@ -10,10 +10,15 @@
     <a asp-action="Create">Create New</a>
 </p>
 
-<form asp-action="Index">
-    <input type="text" name = "search">
-    <input type="submit"/>
-    <a asp-action="Index">Show All</a>
+<form sp-page="./Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Find by name: 
+            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
+            <input type="submit" value="Search" class="btn btn-default" /> |
+            <a asp-page="./Index">Back to full List</a>
+        </p>
+    </div>
 </form>
 
 <table class="table">

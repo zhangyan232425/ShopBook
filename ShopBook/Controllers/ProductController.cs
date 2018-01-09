@@ -20,20 +20,21 @@ namespace ShopBook.Controllers
 
 
 
-        public async Task<IActionResult> Index(string sort,string search)
+        public async Task<IActionResult> Index(string sort,string searchString)
         {
             ViewData["NameSortParm"] = sort=="name_asc"?"name_desc":"name_asc";
             ViewData["PriceSortParm" ]= sort== "price_asc" ? "price_desc":"price_asc";
             ViewData["DateSortParm"] = sort=="date_asc" ? "date_desc":"date_asc";
-            
+            CurrentFilter = searchString;
             var product  = from item  in _context.Products
                             select item;
+        if (!String.IsNullOrEmpty(searchString))
+        {
+            product = product.Where(s => s.Name.Contains(searchString));
+        }
             
-            if (!String.IsNullOrEmpty(search))
-            {
-                product = product.Where(p=>p.Name.Contains(search));
-            }
             
+     
             switch(sort)
             {
                 case "name_desc":
