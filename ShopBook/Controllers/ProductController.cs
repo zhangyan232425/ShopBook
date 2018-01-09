@@ -17,7 +17,9 @@ namespace ShopBook.Controllers
         {
             _context = context;
         }
-        
+
+
+
         public async Task<IActionResult> Index(string sort,string search)
         {
             ViewData["NameSortParm"] = sort=="name_asc"?"name_desc":"name_asc";
@@ -26,6 +28,7 @@ namespace ShopBook.Controllers
             
             var product  = from item  in _context.Products
                             select item;
+            
             if (!String.IsNullOrEmpty(search))
             {
                 product = product.Where(p=>p.Name.Contains(search));
@@ -43,18 +46,15 @@ namespace ShopBook.Controllers
                 case "price_desc":
                     product = product.OrderByDescending(p=>p.Price);
                     break;
-                case "price_asc":
+                case "Price":
                     product = product.OrderBy(p => p.Price);
                     break;
                 case "date_desc":
                     product = product.OrderByDescending(p=>p.ProductDate);
                     break;
-                case "date_asc":
-                    product = product.OrderBy(p => p.ProductDate);
-                    break;
                 
-
             }
+
             return View(await product.AsNoTracking().ToListAsync());
         }
     }
