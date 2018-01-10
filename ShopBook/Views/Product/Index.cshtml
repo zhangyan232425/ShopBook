@@ -20,17 +20,23 @@
     <thead>
         <tr>
                 <th>
-                    <a asp-action="Index" asp-route-sort="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
+                    <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
+                       asp-route-currentFilter ="@Model.CurrentFilter">
+                        @Html.DisplayNameFor(model => model.Product[0].Name)
+                    </a>
                 </th>
                 <th>
-                    <a asp-action="Index" asp-route-sort="@ViewData["PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
+                    <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
+                       asp-route-currentFilter ="@Model.CurrentFilter">
+                        @Html.DisplayNameFor(model => model.Product[0].ProductDate)
+                    </a>               
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Store)
+                    @Html.DisplayNameFor(model => model.Product.Store)
                 </th>
                 
                 <th>
-                    <a asp-action="Index" asp-route-sort="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.ProductDate)</a>
+                    @Html.DisplayNameFor(model => model.Product[0].Price)
                 </th>
             <th></th>
         </tr>
@@ -60,3 +66,23 @@
 }
     </tbody>
 </table>
+
+@{
+    var prevDisabled = !Model.Product.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.Product.HasNextPage ? "disabled" : "";
+}
+
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Product.PageIndex - 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-page="./Index"
+   asp-route-sortOrder="@Model.CurrentSort"
+   asp-route-pageIndex="@(Model.Product.PageIndex + 1)"
+   asp-route-currentFilter="@Model.CurrentFilter"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>
