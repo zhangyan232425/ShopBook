@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using ReflectionIT.Mvc.Paging;
 using ShopBook.Context;
@@ -20,14 +21,17 @@ namespace ShopBook.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(int page =1,string sortExpression = "Name")
+        public async Task<IActionResult> Index(string filter,int page =1,string sortExpression = "Name")
         {
             var qry = _context.Products.AsNoTracking();
+            if (!string.IsNullOrEmpty(filter)){
+                qry = qry.Where(p=>p.Name.Contains(filter));
+            }
             var model = await PagingList.CreateAsync(qry,10,page,sortExpression,"Name");
+            model.RouteValue = new RouteValueDictionary {
+        { "filter", filter}
+    };
             return View(model);
-        }
-
-        
-        
+        }   
     }
 }

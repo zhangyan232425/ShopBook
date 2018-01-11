@@ -32337,6 +32337,7 @@
       "Microsoft.AspNetCore.Mvc.TagHelpers >= 2.0.1",
       "Microsoft.AspNetCore.Razor.Runtime >= 2.0.1",
       "Microsoft.AspNetCore.Razor.Tools >= 1.1.0-preview4-final",
+      "Microsoft.AspNetCore.Routing >= 2.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0",
@@ -32443,6 +32444,10 @@
           "ReflectionIT.Mvc.Paging": {
             "target": "Package",
             "version": "2.4.0"
+          },
+          "Microsoft.AspNetCore.Routing": {
+            "target": "Package",
+            "version": "2.0.1"
           }
         },
         "imports": [
