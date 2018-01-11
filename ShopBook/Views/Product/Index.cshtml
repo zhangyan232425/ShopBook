@@ -1,88 +1,58 @@
-﻿@model IEnumerable<ShopBook.Models.Product>
-
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ShopBook.Models.Product>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, ReflectionIT.Mvc.Paging
 @{
     ViewData["Title"] = "Index";
 }
+
+<nav aria-label="eg">
+    @await this.Component.InvokeAsync("Pager",new{ pagingList = this.Model})
+</nav>
 
 <h2>Index</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-
-<form asp-action="Index">
-    <input type="text" name = "search">
-    <input type="submit"/>
-    <a asp-action="Index">Show All</a>
-</form>
-
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort"
-                       asp-route-currentFilter ="@Model.CurrentFilter">
-                        @Html.DisplayNameFor(model => model.Product[0].Name)
-                    </a>
-                </th>
-                <th>
-                    <a asp-page="./Index" asp-route-sortOrder="@Model.DateSort"
-                       asp-route-currentFilter ="@Model.CurrentFilter">
-                        @Html.DisplayNameFor(model => model.Product[0].ProductDate)
-                    </a>               
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Product.Store)
-                </th>
-                
-                <th>
-                    @Html.DisplayNameFor(model => model.Product[0].Price)
-                </th>
-            <th></th>
+            <th>
+                @Html.SortableHeaderFor(model => model.Name, this.Model)
+            </th>
+            <th>
+                @Html.SortableHeaderFor(model => model.Price, this.Model)
+            </th>
+            <th>
+                @Html.SortableHeaderFor(model => model.Store, this.Model)
+            </th>
+            <th>
+                @Html.SortableHeaderFor(model => model.ProductDate, this.Model)
+            </th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem=>item.Store)
-            
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductDate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
+
+
+@foreach (var item in Model)
+{
+    <tr>
+    <td>
+    @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Store)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.ProductDate)
+    </td>
+    </tr>
 }
-    </tbody>
+
 </table>
+<nav aria-label=" example">
+    <vc:pager paging-list="@Model" />
+</nav>
 
-@{
-    var prevDisabled = !Model.Product.HasPreviousPage ? "disabled" : "";
-    var nextDisabled = !Model.Product.HasNextPage ? "disabled" : "";
-}
-
-<a asp-page="./Index"
-   asp-route-sortOrder="@Model.CurrentSort"
-   asp-route-pageIndex="@(Model.Product.PageIndex - 1)"
-   asp-route-currentFilter="@Model.CurrentFilter"
-   class="btn btn-default @prevDisabled">
-    Previous
-</a>
-<a asp-page="./Index"
-   asp-route-sortOrder="@Model.CurrentSort"
-   asp-route-pageIndex="@(Model.Product.PageIndex + 1)"
-   asp-route-currentFilter="@Model.CurrentFilter"
-   class="btn btn-default @nextDisabled">
-    Next
-</a>
