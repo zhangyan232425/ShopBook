@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="{026D8387-B084-4CC7-9612-F23A54B12BEB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ShopBook/Controllers/ProductController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ShopBook/Controllers/SpendingDiaryController.cs">
     <Files>
       <File FileName="ShopBook/Controllers/ShoppingListController.cs" Line="30" Column="10" />
-      <File FileName="ShopBook/Controllers/ProductController.cs" Line="15" Column="40" />
+      <File FileName="ShopBook/Controllers/ProductController.cs" Line="24" Column="10" />
+      <File FileName="ShopBook/Controllers/SpendingDiaryController.cs" Line="36" Column="60" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

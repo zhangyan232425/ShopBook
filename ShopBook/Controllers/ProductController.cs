@@ -20,10 +20,10 @@ namespace ShopBook.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(int page =1)
+        public async Task<IActionResult> Index(int page =1,string sortExpression = "Name")
         {
-            var qry = _context.Products.AsNoTracking().OrderBy(p => p.Name);
-            var model = await PagingList.CreateAsync(qry,1,page);
+            var qry = _context.Products.AsNoTracking();
+            var model = await PagingList.CreateAsync(qry,10,page,sortExpression,"Name");
             return View(model);
         }
 
