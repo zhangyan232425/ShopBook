@@ -21,10 +21,14 @@ namespace ShopBook.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+            var products = from p in _context.Products
+                       where p.Store ==null
+                           select p;
+
+
             ViewProduct vp = new ViewProduct()
             {
-                
-                Products = _context.Products.ToList()
+                Products = products.ToList()
             }; 
             return View(vp);
         }

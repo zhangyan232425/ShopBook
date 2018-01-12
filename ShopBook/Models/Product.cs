@@ -13,8 +13,8 @@ namespace ShopBook.Models
         public decimal UnitPrice { get; set; } 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public DateTime ProductDate { get; set; }    
-
+        public DateTime ProductDate { get; set; } 
+        public UnitEnum WeightUnit{ get; set;}
     }
 
 //public class ProductModel

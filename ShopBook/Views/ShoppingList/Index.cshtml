@@ -3,6 +3,10 @@
 <form method="post" asp-controller="ShoppingList" asp-action = "Add">
     <div class="input-group">
         <input asp-for="NewProduct.Name" type="text" class="form-control"/>
+        <input asp-for="NewProduct.Weight" type="number" class="form-control"/>
+        <select asp-for="NewProduct.WeightUnit" 
+            asp-items="Html.GetEnumSelectList<UnitEnum>()"> >
+       </select>
         <input type="submit" value="Create" class="btn btn-primary"/>
     </div>
 </form>
@@ -10,6 +14,7 @@
 @foreach (var item in Model.Products.ToList()){
 <div>
 @Html.DisplayFor(modelItem=>item.Name)
+@Html.DisplayFor(modelItem=>item.Weight)
 </div>
 
 }
