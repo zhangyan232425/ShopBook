@@ -15,8 +15,8 @@
 <div>
 @Html.DisplayFor(modelItem=>item.Name)
 @Html.DisplayFor(modelItem=>item.Weight)
+<a href="@Url.Action("Delete",new {id = item.ID})" >Delete</a>
 </div>
-
 }
 
 

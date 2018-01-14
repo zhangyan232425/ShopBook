@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ShopBook.Context;
 using ShopBook.Models;
 
@@ -40,6 +41,19 @@ namespace ShopBook.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            
+            var product = await _context.Products.AsNoTracking()
+        .SingleOrDefaultAsync(p => p.ID == id);
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+
+        }
+
+
 
 
     }
