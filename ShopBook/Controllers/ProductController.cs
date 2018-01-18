@@ -29,8 +29,8 @@ namespace ShopBook.Controllers
             }
             var model = await PagingList.CreateAsync(qry,10,page,sortExpression,"Name");
             model.RouteValue = new RouteValueDictionary {
-        { "filter", filter}
-    };
+                { "filter", filter}
+            };
             return View(model);
         }   
     }

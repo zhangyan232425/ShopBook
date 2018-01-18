@@ -1,49 +1,43 @@
-﻿@model ShopBook.Models.ViewProduct 
+﻿@model ShopBook.Models.Product 
 
 <p>
-    <a asp-action="Add">Create New</a>
+    check you spending history
 </p>
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.NewProduct.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NewProduct.Store)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NewProduct.Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NewProduct.Weight)
-                </th>
-            
-        </tr>
-    </thead>
+
+<h1> @ViewBag.TotalSpend</h1>
+
+<form asp-action="Index" method ="POST" class="form-horizontal" role="form">
+    <div class="form-group">
+        <div class="row">
+            <label  class="control-label" >Store</label>
+            <select asp-for = "Store" asp-items="@(new SelectList(@ViewBag.StoreName))"></select>
+        </div>
+    </div>
+    <input type="submit" value="submit" />
+</form>
+
+<h1> @ViewBag.SelectStore</h1>
+
+ 
+<div class="container"> 
+    <div class="row">
+        <div>
+            <form asp-action="Index" method ="POST" class="form-horizontal" role="form">
+            @Html.Label("HTML Date control", null, new { @class = "control-label col-xs-3" })
+            <div class="col-xs-3">
+                <input type="date" asp-for="ProductDate"/>
+                <input type="submit" value="submit"/>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
-    <tbody>
-@foreach (var item in Model.Products) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Store)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Weight)
-            </td>
-            <td>
-                <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-controller="Product" asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-controller="Product"asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<h1>@ViewBag.day</h1>
+
+<div>
+    <a asp-controller="SpendingDiary" asp-action="AddReceipt" class="btn btn-info" role="button">Add a new receipt!</a>
+</div>
+
+

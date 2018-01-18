@@ -1,2 +1,15 @@
 ﻿@model ShopBook.Models.ViewProduct
 
+
+<h1>Add what you purchase today!</h1>
+
+<form method="post" asp-controller="SpendingDiary" asp-action = "Add">
+    <div class="input-group">
+        <input asp-for="Product.Name" type="text" />
+        <input asp-for="Product.Store" type="text" />
+        <input type="submit" value="Create" class="btn btn-primary"/>
+    </div>
+</form>
+
+
+

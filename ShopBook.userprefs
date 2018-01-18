@@ -1,9 +1,5 @@
 ﻿<Properties StartupConfiguration="{026D8387-B084-4CC7-9612-F23A54B12BEB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ShopBook/Controllers/ShoppingListController.cs">
-    <Files>
-      <File FileName="ShopBook/Controllers/ShoppingListController.cs" Line="45" Column="52" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.ShopBook PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

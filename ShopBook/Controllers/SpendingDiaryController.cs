@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -20,29 +21,50 @@ namespace ShopBook.Controllers
         }
 
         // Index page
-        public IActionResult Index()
+        public IActionResult Index(Product Product)
         {
-            ViewProduct vp = new ViewProduct()
-            {
-                Products = _context.Products.ToList()
-            };
+            //get total spending
+            List<Product> ProductList = new List<Product>();
+            ViewBag.TotalSpend = _context.Products
+                                 .Where(p=>p.ID!=6)
+                                 .Sum(p => p.Price);
+            
+            //get the list of store 
+            var StoreName = _context.Products
+                                    .Select(p => p.Store)
+                                    .Distinct();
+            ViewBag.StoreName = StoreName;
+            // get the select store  
+            ViewBag.SelectStore = Product.Store;
 
-            return View(vp);
+            //get start date
+
+            DateTime startdate = Product.ProductDate.Date;
+            ViewBag.day = startdate;
+            return View();
         }
 
 
 
        // Add new diary
+        public IActionResult AddReceipt(Product NewItem)
+       {
+            List<Product> NewAddProducts = new List<Product>();
+            NewAddProducts.Add(NewItem);
+
+            return View(NewAddProducts);
+       }
+   
+
         public async Task<IActionResult>Add(ViewProduct vp)
         {
             vp.NewProduct.ProductDate = DateTime.Today;
             _context.Products.Add(vp.NewProduct);
             await _context.SaveChangesAsync();
-            return View(vp);
+            return View("AddReceipt");
         }
-       
 
-       //Edit Product
+
 
     }
 }

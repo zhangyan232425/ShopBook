@@ -12,9 +12,10 @@ using System;
 namespace ShopBook.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    partial class ProductDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180118013009_updatetable")]
+    partial class updatetable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
