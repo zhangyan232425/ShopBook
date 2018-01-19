@@ -1,0 +1,45 @@
+body{
+    background-color: bisque;
+}
+
+.container-fluid{
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+}
+
+.box {
+position: relative;
+height: 10cm;
+padding-bottom: 1%;
+padding-left: 1px;
+float:left;
+
+}
+
+.box-1{
+background-image:url('../images/home/bg1.jpg');
+background-size: 7cm;
+background-repeat: no-repeat;
+background-position-x: 50%;
+background-position-y: 100px;
+
+}
+
+.box-2{
+background-image:url('../images/home/bg2.jpg');
+background-size: 7cm;
+background-repeat: no-repeat;
+background-position-x: 50%;
+background-position-y: 115px;
+}
+
+.box-3{
+background-image:url('../images/home/bg3.jpg');
+background-size: 8cm;
+background-repeat: no-repeat;
+background-position-x: 50%;
+background-position-y: 125px;
+}
+
+
+

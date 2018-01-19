@@ -41,18 +41,26 @@ namespace ShopBook.Controllers
 
             DateTime startdate = Product.ProductDate.Date;
             ViewBag.day = startdate;
+          
             return View();
+
         }
 
 
 
        // Add new diary
+       static List<Product> NewAddProducts = new List<Product>();
         public IActionResult AddReceipt(Product NewItem)
        {
-            List<Product> NewAddProducts = new List<Product>();
+            
             NewAddProducts.Add(NewItem);
 
-            return View(NewAddProducts);
+            ViewProduct vp = new ViewProduct
+            {
+                Products = NewAddProducts
+            };
+
+            return View(vp);
        }
    
 
@@ -61,7 +69,7 @@ namespace ShopBook.Controllers
             vp.NewProduct.ProductDate = DateTime.Today;
             _context.Products.Add(vp.NewProduct);
             await _context.SaveChangesAsync();
-            return View("AddReceipt");
+            return RedirectToAction("AddReceipt",vp.NewProduct);
         }
 
 
