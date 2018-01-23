@@ -1,0 +1,13 @@
+﻿
+.total{
+  position: relative;
+  margin-left: 80%;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  font-size: 50px;
+  color: #fff;
+  line-height: 500px;
+  text-align: center;
+  background: #000
+}

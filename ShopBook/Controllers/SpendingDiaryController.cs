@@ -25,9 +25,7 @@ namespace ShopBook.Controllers
         {
             //get total spending
             List<Product> ProductList = new List<Product>();
-            ViewBag.TotalSpend = _context.Products
-                                 .Where(p=>p.ID!=6)
-                                 .Sum(p => p.Price);
+            ViewBag.TotalSpend = "$"+_context.Products.Sum(p => p.Price).ToString("#0.00");
             
             //get the list of store 
             var StoreName = _context.Products

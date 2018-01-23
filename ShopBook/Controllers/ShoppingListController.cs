@@ -19,14 +19,11 @@ namespace ShopBook.Controllers
         {
             _context = context;
         }
-        // GET: /<controller>/
+        
         public IActionResult Index()
         {
-            var products = from p in _context.Products
-                       where p.Store ==null
-                           select p;
-
-
+            //get the item whose store is null or empty
+            var products = _context.Products.Where(p => p.Store == " " || p.Store == null);
             ViewProduct vp = new ViewProduct()
             {
                 Products = products.ToList()
@@ -46,7 +43,7 @@ namespace ShopBook.Controllers
         {
             
             var product = await _context.Products.AsNoTracking()
-        .SingleOrDefaultAsync(p => p.ID == id);
+            .SingleOrDefaultAsync(p => p.ID == id);
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");

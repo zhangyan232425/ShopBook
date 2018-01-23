@@ -2,27 +2,24 @@
 @using ReflectionIT.Mvc.Paging
 @addTagHelper *, ReflectionIT.Mvc.Paging
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Product";
 }
+
+<link rel="stylesheet" href="~/css/product.css"/>
 
 <nav aria-label="eg">
     @await this.Component.InvokeAsync("Pager",new{ pagingList = this.Model})
 </nav>
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-
 <form method="get" class="form-inline">
     <input name="filter" class="form-control" placeholder="filter" value="@Model.RouteValue["Filter"]" />
-    <input type="submit" class="btn btn-info">
-        <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search
-   
+    <button type="submit" class="btn btn-info">
+        <i >
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span></i> Search
+    </button>
 </form>
 
-<table class="table">
+<table >
     <thead>
         <tr>
             <th>

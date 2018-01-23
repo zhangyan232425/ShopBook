@@ -1,24 +1,59 @@
-﻿@model ShopBook.Models.ViewProduct 
-
-<form method="post" asp-controller="ShoppingList" asp-action = "Add">
-    <div class="input-group">
-        <input asp-for="NewProduct.Name" type="text" class="form-control"/>
-        <input asp-for="NewProduct.Weight" type="number" class="form-control"/>
-        <select asp-for="NewProduct.WeightUnit" 
-            asp-items="Html.GetEnumSelectList<UnitEnum>()"> >
-       </select>
-        <input type="submit" value="Create" class="btn btn-primary"/>
-    </div>
-</form>
-
-@foreach (var item in Model.Products.ToList()){
-<div>
-@Html.DisplayFor(modelItem=>item.Name)
-@Html.DisplayFor(modelItem=>item.Weight)
-<a href="@Url.Action("Delete",new {id = item.ID})" >Delete</a>
-</div>
+﻿@{
+    ViewData["Title"] = "Shopping List";
 }
+@model ShopBook.Models.ViewProduct 
+<link rel="stylesheet" href="~/css/list.css" />
+
+<div class="container-fluid">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 left">
+        <img src = "../images/home/bg1.png">
+    </div>
+   
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 middle">
+        <h1>Shopping List</h1>
+        <table class="table table-striped table-condensed table-hover">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>Name</th>
+                    <th>Weight</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Products.ToList()){
+                    <tr>
+                        <td>
+                            <span class="glyphicon glyphicon-check"></span>&nbsp;
+                            @Html.DisplayFor(modelItem=>item.Name)
+                        </td>
+                        <td>
+                             @Html.DisplayFor(modelItem=>item.Weight)
+                             @Html.DisplayFor(modelItem=>item.WeightUnit)
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Delete",new {id = item.ID})">
+                                <span class="glyphicon glyphicon-trash"></span>
+                             </a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
 
 
-
+        <form class = "inline" method="post" asp-controller="ShoppingList" asp-action = "Add">
+            <div class = "row"> 
+                <input asp-for="NewProduct.Name" type="text"  placeholder = "Name"/>
+                <input asp-for="NewProduct.Weight" type="number" placeholder = "Weight"/>
+                <select asp-for="NewProduct.WeightUnit" asp-items="Html.GetEnumSelectList<UnitEnum>()"> ></select>   
+            </div>
+            <br>
+            <input type="submit" value="Add to the list" class="btn btn-primary"/>
+        </form>
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 right">
+        <img src = "../images/home/bg1.png">     
+    </div> 
+</div>
 

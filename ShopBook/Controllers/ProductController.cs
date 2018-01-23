@@ -23,11 +23,11 @@ namespace ShopBook.Controllers
 
         public async Task<IActionResult> Index(string filter,int page =1,string sortExpression = "Name")
         {
-            var qry = _context.Products.AsNoTracking();
+            var product = _context.Products.Where(p=> p.Store!= null && p.Store!="").AsNoTracking();
             if (!string.IsNullOrEmpty(filter)){
-                qry = qry.Where(p=>p.Name.Contains(filter));
+                product = product.Where(p=>p.Name.Contains(filter));
             }
-            var model = await PagingList.CreateAsync(qry,10,page,sortExpression,"Name");
+            var model = await PagingList.CreateAsync(product,5,page,sortExpression,"Name");
             model.RouteValue = new RouteValueDictionary {
                 { "filter", filter}
             };

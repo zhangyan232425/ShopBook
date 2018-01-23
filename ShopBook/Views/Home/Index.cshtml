@@ -4,32 +4,32 @@
 
 <link rel="stylesheet" href="~/css/home.css" />
 
-<div class="container-fluid ">
-	
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 box box-1">
-    <div class="project-hover">
-        <h2>Shopping List</h2> 
-		<p>Add items to your next shopping cart!</p>    
-            <a asp-area="" asp-controller="ShoppingList" asp-action="Index" ></a>
+<div class="container-fluid">
+	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 project ">
+		<h1>Shopping List</h1>
+        <div class="project-hover">	
+            <h3>Add items to your next shopping cart!</h3>
+            <hr />     
+            <a asp-area="" asp-controller="ShoppingList" asp-action="Index" >Check the shopping List</a>
+        </div>
     </div>
-</div>
 
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 box box-2" >
-    <div class="project-hover">
-        <h2>SpendingDiary</h2>  
-            <p>Did you got anything special today? Write in your spending diary!</p>
+	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 project ">
+		<h1>Spending Diary</h1>
+        <div class="project-hover">
+        	 <h3>Did you got anything special today? Write it in your spending diary!</h3> 
+            <hr />          
             <a asp-area="" asp-controller="SpendingDiary" asp-action="Index" >Upload My Spending</a>
+        </div>
     </div>
-</div>
 
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 box box-3">
-    <div class="project-hover">
-        <h2>Product</h2>  
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet ullamcorper.</p>
+	<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 project ">
+		<h1>Product</h1>
+        <div class="project-hover">
+        	<h3>Check out the history of the product</h3>          
+            <hr />
             <a asp-area="" asp-controller="Product" asp-action="Index">Product</a>
+        </div>
     </div>
-</div>
 
 </div>
-
-

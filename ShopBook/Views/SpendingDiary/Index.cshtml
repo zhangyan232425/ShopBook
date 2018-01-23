@@ -1,10 +1,32 @@
 ﻿@model ShopBook.Models.Product 
 
-<p>
-    check you spending history
-</p>
+<link rel="stylesheet" href="~/css/diary.css" />
 
-<h1> @ViewBag.TotalSpend</h1>
+@{
+    ViewData["Title"] = "Spending Diary";
+}
+
+
+
+<div class="container-fluid">
+
+    <div class="page-header">
+    <h1>
+        Check out your spending detail
+    <h1>
+    </div>
+
+    
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 total">
+        
+        <h1>Total Expense:</h1>
+        <h1> @ViewBag.TotalSpend</h1>    
+    </div>
+
+
+</div>
+
+
 
 <form asp-action="Index" method ="POST" class="form-horizontal" role="form">
     <div class="form-group">

@@ -1,0 +1,23 @@
+﻿
+.container-fluid{
+    padding-top: 0.5cm;
+}
+
+.middle{
+    padding-left: 1cm;
+}
+
+img{
+    margin-top: 1cm;
+    height: 13cm;
+    width: 10cm;
+}
+
+input{
+    width: 4cm;
+}
+
+.table{
+    font-size: 1em;
+}
+
