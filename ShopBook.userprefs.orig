@@ -1,0 +1,20 @@
+<<<<<<< HEAD
+﻿<Properties StartupConfiguration="{026D8387-B084-4CC7-9612-F23A54B12BEB}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ShopBook/Controllers/ProductController.cs">
+    <Files>
+      <File FileName="ShopBook/Controllers/ProductController.cs" Line="36" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+=======
+﻿<Properties StartupConfiguration="{A4833E74-12F4-4EAE-8C40-DDCDB7E025B8}|Default">
+  <MonoDevelop.Ide.Workbench />
+>>>>>>> develop
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.ShopBook PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>

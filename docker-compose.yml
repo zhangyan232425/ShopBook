@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  shopbook:
+    image: shopbook
+    build:
+      context: ./ShopBook
+      dockerfile: Dockerfile

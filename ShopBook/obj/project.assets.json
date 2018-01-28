@@ -3274,6 +3274,26 @@
           "lib/netstandard1.3/Pomelo.JsonObject.dll": {}
         }
       },
+      "ReflectionIT.Analyzer/1.1.0": {
+        "type": "package"
+      },
+      "ReflectionIT.Mvc.Paging/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.1",
+          "Microsoft.AspNetCore.Mvc.Razor": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
+          "Microsoft.Extensions.FileProviders.Embedded": "2.0.0",
+          "Microsoft.Extensions.Options": "2.0.0",
+          "ReflectionIT.Analyzer": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
+        }
+      },
       "Remotion.Linq/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -8726,6 +8746,26 @@
         },
         "runtime": {
           "lib/netstandard1.3/Pomelo.JsonObject.dll": {}
+        }
+      },
+      "ReflectionIT.Analyzer/1.1.0": {
+        "type": "package"
+      },
+      "ReflectionIT.Mvc.Paging/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.1",
+          "Microsoft.AspNetCore.Mvc.Razor": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
+          "Microsoft.Extensions.FileProviders.Embedded": "2.0.0",
+          "Microsoft.Extensions.Options": "2.0.0",
+          "ReflectionIT.Analyzer": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -14272,6 +14312,26 @@
         },
         "runtime": {
           "lib/netstandard1.3/Pomelo.JsonObject.dll": {}
+        }
+      },
+      "ReflectionIT.Analyzer/1.1.0": {
+        "type": "package"
+      },
+      "ReflectionIT.Mvc.Paging/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.1",
+          "Microsoft.AspNetCore.Mvc.Razor": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
+          "Microsoft.Extensions.FileProviders.Embedded": "2.0.0",
+          "Microsoft.Extensions.Options": "2.0.0",
+          "ReflectionIT.Analyzer": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -20063,6 +20123,26 @@
         },
         "runtime": {
           "lib/netstandard1.3/Pomelo.JsonObject.dll": {}
+        }
+      },
+      "ReflectionIT.Analyzer/1.1.0": {
+        "type": "package"
+      },
+      "ReflectionIT.Mvc.Paging/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.1",
+          "Microsoft.AspNetCore.Mvc.Razor": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
+          "Microsoft.Extensions.FileProviders.Embedded": "2.0.0",
+          "Microsoft.Extensions.Options": "2.0.0",
+          "ReflectionIT.Analyzer": "1.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -25906,6 +25986,28 @@
         "lib/netstandard1.3/Pomelo.JsonObject.dll",
         "pomelo.jsonobject.1.1.1.nupkg.sha512",
         "pomelo.jsonobject.nuspec"
+      ]
+    },
+    "ReflectionIT.Analyzer/1.1.0": {
+      "sha512": "uN9N6YnyMkp8vpBToJklhjFpmxLAO8ODZCOfyPRe74URRQsQUVY5VcMxdn1oJhEtjjBSRnZymfUcCeg+0F71bg==",
+      "type": "package",
+      "path": "reflectionit.analyzer/1.1.0",
+      "files": [
+        "analyzers/dotnet/cs/ReflectionITAnalyzer.dll",
+        "reflectionit.analyzer.1.1.0.nupkg.sha512",
+        "reflectionit.analyzer.nuspec",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "ReflectionIT.Mvc.Paging/2.4.0": {
+      "sha512": "taRXjsB07XSaVNJoUp0ehmUZyEPFGFzI57s51n7rEXRY4VBgfgbypuGicA+q9c1rquoo500206OPDuOcGiUFjg==",
+      "type": "package",
+      "path": "reflectionit.mvc.paging/2.4.0",
+      "files": [
+        "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll",
+        "reflectionit.mvc.paging.2.4.0.nupkg.sha512",
+        "reflectionit.mvc.paging.nuspec"
       ]
     },
     "Remotion.Linq/2.1.1": {
@@ -32235,11 +32337,13 @@
       "Microsoft.AspNetCore.Mvc.TagHelpers >= 2.0.1",
       "Microsoft.AspNetCore.Razor.Runtime >= 2.0.1",
       "Microsoft.AspNetCore.Razor.Tools >= 1.1.0-preview4-final",
+      "Microsoft.AspNetCore.Routing >= 2.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 2.0.0",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.0",
       "Pomelo.EntityFrameworkCore.MySql >= 2.0.1",
-      "Pomelo.EntityFrameworkCore.MySql.Design >= 1.1.2"
+      "Pomelo.EntityFrameworkCore.MySql.Design >= 1.1.2",
+      "ReflectionIT.Mvc.Paging >= 2.4.0"
     ]
   },
   "packageFolders": {
@@ -32336,6 +32440,14 @@
           "Microsoft.AspNetCore.Mvc.Razor.Host": {
             "target": "Package",
             "version": "1.1.6"
+          },
+          "ReflectionIT.Mvc.Paging": {
+            "target": "Package",
+            "version": "2.4.0"
+          },
+          "Microsoft.AspNetCore.Routing": {
+            "target": "Package",
+            "version": "2.0.1"
           }
         },
         "imports": [

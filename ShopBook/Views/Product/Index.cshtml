@@ -1,67 +1,64 @@
-﻿@model IEnumerable<ShopBook.Models.Product>
-
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ShopBook.Models.Product>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *, ReflectionIT.Mvc.Paging
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Product";
 }
 
-<h2>Index</h2>
+<link rel="stylesheet" href="~/css/product.css"/>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<nav aria-label="eg">
+    @await this.Component.InvokeAsync("Pager",new{ pagingList = this.Model})
+</nav>
 
-<form sp-page="./Index" method="get">
-    <div class="form-actions no-color">
-        <p>
-            Find by name: 
-            <input type="text" name="SearchString" value="@Model.CurrentFilter" />
-            <input type="submit" value="Search" class="btn btn-default" /> |
-            <a asp-page="./Index">Back to full List</a>
-        </p>
-    </div>
+<form method="get" class="form-inline">
+    <input name="filter" class="form-control" placeholder="filter" value="@Model.RouteValue["Filter"]" />
+    <button type="submit" class="btn btn-info">
+        <i >
+            <span class="glyphicon glyphicon-search" aria-hidden="true"></span></i> Search
+    </button>
+
 </form>
 
-<table class="table">
+<table >
     <thead>
         <tr>
-                <th>
-                    <a asp-action="Index" asp-route-sort="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Name)</a>
-                </th>
-                <th>
-                    <a asp-action="Index" asp-route-sort="@ViewData["PriceSortParm"]">@Html.DisplayNameFor(model => model.Price)</a>
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Store)
-                </th>
-                
-                <th>
-                    <a asp-action="Index" asp-route-sort="@ViewData["DateSortParm"]">@Html.DisplayNameFor(model => model.ProductDate)</a>
-                </th>
-            <th></th>
+            <th>
+                @Html.SortableHeaderFor(model => model.Name, this.Model)
+            </th>
+            <th>
+                @Html.SortableHeaderFor(model => model.Price, this.Model)
+            </th>
+            <th>
+                @Html.SortableHeaderFor(model => model.Store, this.Model)
+            </th>
+            <th>
+                @Html.SortableHeaderFor(model => model.ProductDate, this.Model)
+            </th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem=>item.Store)
-            
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductDate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
+
+
+@foreach (var item in Model)
+{
+    <tr>
+    <td>
+    @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.Store)
+    </td>
+    <td>
+    @Html.DisplayFor(modelItem => item.ProductDate)
+    </td>
+    </tr>
 }
-    </tbody>
+
 </table>
+<nav aria-label=" example">
+    <vc:pager paging-list="@Model" />
+</nav>
+

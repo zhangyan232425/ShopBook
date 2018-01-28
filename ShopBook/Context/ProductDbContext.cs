@@ -14,9 +14,12 @@ namespace ShopBook.Context
 
         public DbSet<Product> Products { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
+            base.OnModelCreating(modelBuilder);
+         //   builder.Entity<Product>()
+          //  .Property(p=>p.UnitPrice)
+           // .HasComputedColumnSql([Price]/[Weight]);
         }
 
     }

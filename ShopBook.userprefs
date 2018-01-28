@@ -1,8 +1,21 @@
-﻿<Properties StartupConfiguration="{026D8387-B084-4CC7-9612-F23A54B12BEB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ShopBook/Controllers/ProductController.cs">
-    <Files>
-      <File FileName="ShopBook/Controllers/ProductController.cs" Line="36" Column="13" />
-    </Files>
+﻿<Properties StartupConfiguration="{A4833E74-12F4-4EAE-8C40-DDCDB7E025B8}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
+          <Node name="ShopBook" expanded="True">
+            <Node name="ShopBook" expanded="True">
+              <Node name="Views" expanded="True">
+                <Node name="Product" expanded="True">
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.ShopBook PreferredExecutionTarget="MonoDevelop.Default" />
@@ -10,5 +23,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>

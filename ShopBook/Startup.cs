@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using ShopBook.Context;
+using ReflectionIT.Mvc.Paging;
 
 namespace ShopBook
 {
@@ -27,7 +28,7 @@ namespace ShopBook
             services.AddDbContext<ProductDbContext>(options =>
                 options.UseMySql(Configuration.GetConnectionString("Default")));
             //add authentication service
-
+            services.AddPaging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

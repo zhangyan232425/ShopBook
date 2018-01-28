@@ -1,2 +1,23 @@
 ﻿@model ShopBook.Models.ViewProduct
 
+
+<h1>Add what you purchase today!</h1>
+
+<form method="post" asp-controller="SpendingDiary" asp-action = "Add">
+    <div class="input-group">
+        <input asp-for="NewProduct.Name" type="text" />
+        <input asp-for="NewProduct.Store" type="text" />
+        <input type="submit" value="Create" class="btn btn-primary"/>
+    </div>
+</form>
+
+
+@foreach (var item in Model.Products.ToList()){
+<div>
+@Html.DisplayFor(modelItem=>item.Name)
+@Html.DisplayFor(modelItem=>item.Store)
+</div>
+}
+
+
+

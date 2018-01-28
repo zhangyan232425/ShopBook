@@ -1,49 +1,78 @@
-﻿@model ShopBook.Models.ViewProduct 
+﻿@model IEnumerable<ShopBook.Models.Product>
 
-<p>
-    <a asp-action="Add">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.NewProduct.Name)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NewProduct.Store)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NewProduct.Price)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.NewProduct.Weight)
-                </th>
-            
-        </tr>
-    </thead>
+<link rel="stylesheet" href="~/css/diary.css" />
 
-
-    <tbody>
-@foreach (var item in Model.Products) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Store)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Weight)
-            </td>
-            <td>
-                <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-controller="Product" asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-controller="Product"asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
+@{
+    ViewData["Title"] = "Spending Diary";
 }
-    </tbody>
-</table>
+
+
+
+<div class="container-fluid">
+
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 page-header">
+    <h1>
+        Check out your spending detail
+    </h1>
+    </div> 
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+        <div class="add-diary">
+            <a asp-controller="SpendingDiary" asp-action="AddReceipt" class = "btn btn-primary" role="button">Add a new receipt!</a>
+         </div>
+   </div>
+
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+        <form asp-action="Index" method ="POST" class="form-horizontal" role="form">
+        <div class="row">
+            <label>From</label>
+            <input type="date" name="StartDate"/>
+            <label>to</label>
+            <input type="date" name="EndDate"/>
+            <label>Store</label>
+            <select name = "StoreFilter" asp-items="@(new SelectList(@ViewBag.StoreName))"></select>
+            <input type="submit" value="submit" />
+        </div>
+        </form> 
+
+        <div class="table100 ver1 m-b-110">
+            <table class="table">
+                <thead>
+                    <tr class="row100 head">
+                        <th>Name</th>
+                        <th>Store</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="row100">
+                        <td>@Html.DisplayFor(model => item.Name)</td>
+                        <td>@Html.DisplayFor(model => item.Store)</td>
+                        <td>@Html.DisplayFor(model => item.Price)</td>
+                        <td>@Html.DisplayFor(model => item.ProductDate)</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>  
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 total">
+        
+        <h1>Total Expense:</h1>
+        <h1> @ViewBag.TotalSpend</h1>    
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "2ac2166cd5b371eda22b56cad8b49a0df97079ec"
+    "signature": "994b94c23bc2554d9c2969a98092d3ed2c509c34"
   },
   "compilationOptions": {
     "defines": [
@@ -31,11 +31,13 @@
           "Microsoft.AspNetCore.Mvc.TagHelpers": "2.0.1",
           "Microsoft.AspNetCore.Razor.Runtime": "2.0.1",
           "Microsoft.AspNetCore.Razor.Tools": "1.1.0-preview4-final",
+          "Microsoft.AspNetCore.Routing": "2.0.1",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "2.0.1",
-          "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.2"
+          "Pomelo.EntityFrameworkCore.MySql.Design": "1.1.2",
+          "ReflectionIT.Mvc.Paging": "2.4.0"
         },
         "runtime": {
           "ShopBook.dll": {}
@@ -2877,6 +2879,23 @@
         },
         "compile": {
           "lib/netstandard1.3/Pomelo.JsonObject.dll": {}
+        }
+      },
+      "ReflectionIT.Analyzer/1.1.0": {},
+      "ReflectionIT.Mvc.Paging/2.4.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "2.0.1",
+          "Microsoft.AspNetCore.Mvc.Razor": "2.0.1",
+          "Microsoft.EntityFrameworkCore.Relational": "2.0.1",
+          "Microsoft.Extensions.FileProviders.Embedded": "2.0.0",
+          "Microsoft.Extensions.Options": "2.0.0",
+          "ReflectionIT.Analyzer": "1.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -6071,6 +6090,20 @@
       "sha512": "sha512-erkYG/OW1LloSwDFGeS9MvVjy1FLmaV3k8GK/GMR8D3sSDEylZogoLdLiaOFc92+zTen92rG6XGiioNacSlg0A==",
       "path": "pomelo.jsonobject/1.1.1",
       "hashPath": "pomelo.jsonobject.1.1.1.nupkg.sha512"
+    },
+    "ReflectionIT.Analyzer/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uN9N6YnyMkp8vpBToJklhjFpmxLAO8ODZCOfyPRe74URRQsQUVY5VcMxdn1oJhEtjjBSRnZymfUcCeg+0F71bg==",
+      "path": "reflectionit.analyzer/1.1.0",
+      "hashPath": "reflectionit.analyzer.1.1.0.nupkg.sha512"
+    },
+    "ReflectionIT.Mvc.Paging/2.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-taRXjsB07XSaVNJoUp0ehmUZyEPFGFzI57s51n7rEXRY4VBgfgbypuGicA+q9c1rquoo500206OPDuOcGiUFjg==",
+      "path": "reflectionit.mvc.paging/2.4.0",
+      "hashPath": "reflectionit.mvc.paging.2.4.0.nupkg.sha512"
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",

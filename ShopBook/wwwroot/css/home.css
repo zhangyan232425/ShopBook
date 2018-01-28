@@ -1,0 +1,86 @@
+body{
+    background-color: bisque;
+}
+.container-fluid{
+    
+    margin-top: 0.5cm;
+    margin-bottom: 0cm;
+    text-align: center;
+}
+h1{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.project {
+    position: relative;
+    height: 15cm;
+    padding-bottom: 2cm;
+    background-color: rgb(202, 68, 34);
+    background-image: url('../images/home/bg.png');
+    background-size: 10cm;
+    background-repeat: no-repeat;
+    background-position:100%;
+    background-position-y: 3cm;
+    float:left;
+}
+
+
+
+.project-hover {
+    position: relative;
+    background-color: royalblue;
+	width: 100%;
+	height: 100%;
+	color: rgb(197, 108, 108);
+	opacity: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	background-color: rgba(17, 207, 207, 0.7);
+	padding: 40% 0px !important;
+}
+
+.project-hover hr {
+	height: 30px;
+	width: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+	background-color: rgba(255, 255, 255, 1);
+	border: 0;
+}
+
+.project-hover a {
+    font-size: 1.5em;
+	color: rgba(255, 255, 255, 1);
+	padding: 2px 22px;
+	line-height: 80px;
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 5px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.project-hover a:hover {
+    border-radius: 5px;
+	border-color: rgba(51, 51, 51, 1);
+	color: rgba(51, 51, 51, 1);
+	background-color: #FFF;
+}
+
+.project:hover .project-hover {
+	opacity: 1;
+}
+
+.project:hover .project-hover hr {
+	width: 100%;
+	height: 5px;
+}
+
+
+
+

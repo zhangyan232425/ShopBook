@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ShopBook.Context;
 using ShopBook.Models;
 
@@ -18,24 +19,38 @@ namespace ShopBook.Controllers
         {
             _context = context;
         }
-        // GET: /<controller>/
+        
         public IActionResult Index()
         {
+            //get the item whose store is null or empty
+            var products = _context.Products.Where(p => p.Store == " " || p.Store == null);
             ViewProduct vp = new ViewProduct()
             {
-                
-                Products = _context.Products.ToList()
+                Products = products.ToList()
             }; 
             return View(vp);
         }
 
-        public async Task<IActionResult> Add(ViewProduct vp)
+        public async Task<IActionResult> AddAsync(ViewProduct vp)
         {            
             vp.NewProduct.ProductDate = DateTime.Today;
             _context.Products.Add(vp.NewProduct);
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            
+            var product = await _context.Products.AsNoTracking()
+            .SingleOrDefaultAsync(p => p.ID == id);
+            _context.Products.Remove(product);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+
+        }
+
+
 
 
     }
