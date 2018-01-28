@@ -1,4 +1,4 @@
-﻿@model ShopBook.Models.Product 
+﻿@model IEnumerable<ShopBook.Models.Product>
 
 <link rel="stylesheet" href="~/css/diary.css" />
 
@@ -10,56 +10,69 @@
 
 <div class="container-fluid">
 
-    <div class="page-header">
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 page-header">
     <h1>
         Check out your spending detail
-    <h1>
-    </div>
+    </h1>
+    </div> 
 
-    
-    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 total">
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4">
+        <div class="add-diary">
+            <a asp-controller="SpendingDiary" asp-action="AddReceipt" class = "btn btn-primary" role="button">Add a new receipt!</a>
+         </div>
+   </div>
+
+    <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+        <form asp-action="Index" method ="POST" class="form-horizontal" role="form">
+        <div class="row">
+            <label>From</label>
+            <input type="date" name="StartDate"/>
+            <label>to</label>
+            <input type="date" name="EndDate"/>
+            <label>Store</label>
+            <select name = "StoreFilter" asp-items="@(new SelectList(@ViewBag.StoreName))"></select>
+            <input type="submit" value="submit" />
+        </div>
+        </form> 
+
+        <div class="table100 ver1 m-b-110">
+            <table class="table">
+                <thead>
+                    <tr class="row100 head">
+                        <th>Name</th>
+                        <th>Store</th>
+                        <th>Price</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="row100">
+                        <td>@Html.DisplayFor(model => item.Name)</td>
+                        <td>@Html.DisplayFor(model => item.Store)</td>
+                        <td>@Html.DisplayFor(model => item.Price)</td>
+                        <td>@Html.DisplayFor(model => item.ProductDate)</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>  
+
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 total">
         
         <h1>Total Expense:</h1>
         <h1> @ViewBag.TotalSpend</h1>    
     </div>
-
-
 </div>
 
 
 
-<form asp-action="Index" method ="POST" class="form-horizontal" role="form">
-    <div class="form-group">
-        <div class="row">
-            <label  class="control-label" >Store</label>
-            <select asp-for = "Store" asp-items="@(new SelectList(@ViewBag.StoreName))"></select>
-        </div>
-    </div>
-    <input type="submit" value="submit" />
-</form>
-
-<h1> @ViewBag.SelectStore</h1>
-
- 
-<div class="container"> 
-    <div class="row">
-        <div>
-            <form asp-action="Index" method ="POST" class="form-horizontal" role="form">
-            @Html.Label("HTML Date control", null, new { @class = "control-label col-xs-3" })
-            <div class="col-xs-3">
-                <input type="date" asp-for="ProductDate"/>
-                <input type="submit" value="submit"/>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
 
 
-<h1>@ViewBag.day</h1>
 
-<div>
-    <a asp-controller="SpendingDiary" asp-action="AddReceipt" class="btn btn-info" role="button">Add a new receipt!</a>
-</div>
+
+
 
 

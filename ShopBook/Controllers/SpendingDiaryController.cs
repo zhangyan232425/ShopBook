@@ -21,26 +21,29 @@ namespace ShopBook.Controllers
         }
 
         // Index page
-        public IActionResult Index(Product Product)
+        public IActionResult Index(string StoreFilter,DateTime StartDate, DateTime? EndDate =null)
         {
-            //get total spending
-            List<Product> ProductList = new List<Product>();
-            ViewBag.TotalSpend = "$"+_context.Products.Sum(p => p.Price).ToString("#0.00");
-            
-            //get the list of store 
+            //get the list of store
             var StoreName = _context.Products
+                                    .Where(p=>p.Store!=" " && p.Store!= null)
                                     .Select(p => p.Store)
-                                    .Distinct();
+                                    .Distinct().ToList();
+            StoreName.Insert(0," ");
             ViewBag.StoreName = StoreName;
-            // get the select store  
-            ViewBag.SelectStore = Product.Store;
 
-            //get start date
-
-            DateTime startdate = Product.ProductDate.Date;
-            ViewBag.day = startdate;
-          
-            return View();
+            //get show data
+            var data = _context.Products.Where(p => p.Store != " " && p.Store != null);
+            if(!String.IsNullOrEmpty(StoreFilter))
+            {
+                data = data.Where(p => p.Store.Contains(StoreFilter));
+            }
+            if(!EndDate.HasValue)
+            {
+                EndDate = DateTime.Today;
+            }
+            data  = data.Where(p=>p.ProductDate>=StartDate && p.ProductDate<=EndDate).OrderByDescending(p=>p.ProductDate);
+            ViewBag.TotalSpend = "$"+data.Sum(p => p.Price).ToString("#0.00");          
+            return View(data);
 
         }
 
