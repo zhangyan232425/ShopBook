@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <DockerComposeProjectPath>../docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -44,5 +45,9 @@
   <ItemGroup>
     <Content Remove="Views\List\AddList.cshtml" />
     <Content Remove="Views\ShoppingList\AddList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove=".dockerignore" />
+    <None Remove="Dockerfile" />
   </ItemGroup>
 </Project>

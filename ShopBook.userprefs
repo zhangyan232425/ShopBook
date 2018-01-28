@@ -1,16 +1,11 @@
-﻿<Properties StartupConfiguration="{026D8387-B084-4CC7-9612-F23A54B12BEB}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ShopBook/Controllers/SpendingDiaryController.cs">
-    <Files>
-      <File FileName="ShopBook/Controllers/SpendingDiaryController.cs" Line="28" Column="68" />
-      <File FileName="ShopBook/Startup.cs" Line="1" Column="1" />
-      <File FileName="ShopBook/Controllers/ShoppingListController.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{A4833E74-12F4-4EAE-8C40-DDCDB7E025B8}|Default">
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.ShopBook PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>

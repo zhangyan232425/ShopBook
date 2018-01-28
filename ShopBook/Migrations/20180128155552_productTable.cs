@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace ShopBook.Migrations
 {
-    public partial class producttable : Migration
+    public partial class productTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -19,8 +19,10 @@ namespace ShopBook.Migrations
                     Price = table.Column<decimal>(nullable: false),
                     ProductDate = table.Column<DateTime>(nullable: false),
                     Store = table.Column<string>(nullable: true),
-                    UnitPrice = table.Column<decimal>(nullable: false),
-                    Weight = table.Column<decimal>(nullable: false)
+                    UnitPrice = table.Column<decimal>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn),
+                    Weight = table.Column<decimal>(nullable: false),
+                    WeightUnit = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

@@ -50,7 +50,7 @@ namespace ShopBook.Controllers
 
 
        // Add new diary
-       static List<Product> NewAddProducts = new List<Product>();
+       public static List<Product> NewAddProducts = new List<Product>();
         public IActionResult AddReceipt(Product NewItem)
        {
             
@@ -65,7 +65,7 @@ namespace ShopBook.Controllers
        }
    
 
-        public async Task<IActionResult>Add(ViewProduct vp)
+        public async Task<IActionResult>AddAsync(ViewProduct vp)
         {
             vp.NewProduct.ProductDate = DateTime.Today;
             _context.Products.Add(vp.NewProduct);

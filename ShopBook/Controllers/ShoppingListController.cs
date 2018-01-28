@@ -31,7 +31,7 @@ namespace ShopBook.Controllers
             return View(vp);
         }
 
-        public async Task<IActionResult> Add(ViewProduct vp)
+        public async Task<IActionResult> AddAsync(ViewProduct vp)
         {            
             vp.NewProduct.ProductDate = DateTime.Today;
             _context.Products.Add(vp.NewProduct);
@@ -39,7 +39,7 @@ namespace ShopBook.Controllers
             return RedirectToAction("Index");
         }
 
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteAsync(int id)
         {
             
             var product = await _context.Products.AsNoTracking()

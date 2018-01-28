@@ -31,7 +31,7 @@
                              @Html.DisplayFor(modelItem=>item.WeightUnit)
                         </td>
                         <td>
-                            <a href="@Url.Action("Delete",new {id = item.ID})">
+                            <a href="@Url.Action("DeleteAsync",new {id = item.ID})">
                                 <span class="glyphicon glyphicon-trash"></span>
                              </a>
                         </td>
@@ -42,7 +42,7 @@
         </table>
 
 
-        <form class = "inline" method="post" asp-controller="ShoppingList" asp-action = "Add">
+        <form class = "inline" method="post" asp-controller="ShoppingList" asp-action = "AddAsync">
             <div class = "row"> 
                 <input asp-for="NewProduct.Name" type="text"  placeholder = "Name"/>
                 <input asp-for="NewProduct.Weight" type="number" placeholder = "Weight"/>

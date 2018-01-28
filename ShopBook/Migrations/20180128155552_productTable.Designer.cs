@@ -6,13 +6,14 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using ShopBook.Context;
+using ShopBook.Models;
 using System;
 
 namespace ShopBook.Migrations
 {
     [DbContext(typeof(ProductDbContext))]
-    [Migration("20180106012913_producttable")]
-    partial class producttable
+    [Migration("20180128155552_productTable")]
+    public partial class productTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,9 +35,13 @@ namespace ShopBook.Migrations
 
                     b.Property<string>("Store");
 
-                    b.Property<decimal>("UnitPrice");
+                    b.Property<decimal>("UnitPrice")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.ComputedColumn);
 
                     b.Property<decimal>("Weight");
+
+                    b.Property<int>("WeightUnit");
 
                     b.HasKey("ID");
 
