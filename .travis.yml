@@ -2,6 +2,6 @@ language: csharp
 solution: ShopBook.sln
 install:
   - sudo apt-get install -y gtk-sharp2
-  - nuget restore ShopBook.sln
+  - nuget restore 
 script:
  - dotnet restore
