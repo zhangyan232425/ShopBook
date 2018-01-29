@@ -23,7 +23,10 @@ build_script:
   - ps: dotnet build
   - ps: dotnet run a b
   - ps: Pop-Location
-
-
+skip_commits:
+  files:
+    - dir/*
+    - dir/*.md
+    
 test: off 
 version: 0.0.1.{build}
