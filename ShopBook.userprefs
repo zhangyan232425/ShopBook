@@ -5,11 +5,12 @@
         <State name="__root__">
           <Option id="ShowAllFiles" value="True" />
           <Node name="ShopBook" expanded="True">
+            <Node name="bin" expanded="True">
+              <Node name="Debug" selected="True" />
+            </Node>
             <Node name="ShopBook" expanded="True">
               <Node name="Views" expanded="True">
-                <Node name="Product" expanded="True">
-                  <Node name="Index.cshtml" selected="True" />
-                </Node>
+                <Node name="Product" expanded="True" />
               </Node>
             </Node>
           </Node>
