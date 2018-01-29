@@ -1,7 +1,9 @@
+version: 1.0.{build}
 image: Visual Studio 2017
-
-environment:
-  DOTNET_CLI_TELEMETRY_OPTOUT: true
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+platform: Any CPU
+services: mysql
+build:
+  project: ShopBook.sln
+  verbosity: minimal
 before_build:
-  - cmd: dotnet restore
+- cmd: dotnet restore
