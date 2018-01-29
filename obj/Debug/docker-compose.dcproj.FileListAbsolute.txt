@@ -1,1 +1,0 @@
-/Users/zyan/Projects/ShopBook/obj/Debug/docker-compose.dcproj.CoreCompileInputs.cache
