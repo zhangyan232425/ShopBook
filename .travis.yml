@@ -1,2 +1,4 @@
 language: csharp
 solution: ShopBook.sln
+install:
+- nuget restore
