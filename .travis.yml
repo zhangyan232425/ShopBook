@@ -1,5 +1,4 @@
 language: csharp
 solution: ShopBook.sln
-dotnet: latest
 script:
  - dotnet restore
