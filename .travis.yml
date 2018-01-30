@@ -1,11 +1,4 @@
 language: csharp
-<<<<<<< HEAD
-solution: ShopBook.sln
-||||||| merged common ancestors
-solution: ShopBook.sln
-install:
-  NuGet package restore
-=======
 dist: trusty
 env:
   global:
@@ -15,4 +8,4 @@ script:
   - nuget restore
 
 
->>>>>>> b17bd75c7e5f4ce7a5a2c7508fdeb035aac2392d
+
