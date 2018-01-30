@@ -1,16 +1,5 @@
 language: csharp
-
-matrix:
- install:
-  - export DOTNET_INSTALL_DIR="$PWD/.dotnetsdk"
-  - curl -sSL https://raw.githubusercontent.com/dotnet/cli/rel/1.0.0/scripts/obtain/dotnet-install.sh | bash /dev/stdin --version "$CLI_VERSION" --install-dir "$DOTNET_INSTALL_DIR"
-  - export PATH="$DOTNET_INSTALL_DIR:$PATH"  
-
+solution: ShopBook.sln
+dotnet: 2.0
 script:
-  - dotnet --info
-  # Run a new console app
-  - mkdir -p "test/test-dotnet-new" && pushd "test/test-dotnet-new"
-  - dotnet new
-  - dotnet restore
-  - dotnet run a b
-  - popd
+ - dotnet restore
