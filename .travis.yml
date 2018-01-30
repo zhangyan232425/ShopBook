@@ -1,3 +1,12 @@
 language: csharp
-solution: ShopBook.sln
+dist: trusty
+dotnet: 1.0.1
+mono: none
+env:
+  global:
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+    - DOTNET_CLI_TELEMETRY_OPTOUT: 1
+script:
+  - dotnet restore
+  - dotnet build
 
