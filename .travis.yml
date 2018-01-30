@@ -1,2 +1,18 @@
 language: csharp
+<<<<<<< HEAD
 solution: ShopBook.sln
+||||||| merged common ancestors
+solution: ShopBook.sln
+install:
+  NuGet package restore
+=======
+dist: trusty
+env:
+  global:
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE: 1
+    - DOTNET_CLI_TELEMETRY_OPTOUT: 1
+script:
+  - nuget restore
+
+
+>>>>>>> b17bd75c7e5f4ce7a5a2c7508fdeb035aac2392d
